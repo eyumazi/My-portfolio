@@ -1,0 +1,122 @@
+@import '../../assets/styles/variables';
+
+.about {
+  background-color: $white;
+
+  body.dark & {
+    background-color: $darker;
+  }
+
+  .about-content {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2xl;
+  }
+
+  .about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    .profile-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: $rounded-xl;
+      box-shadow: $shadow-lg;
+      border: 5px solid $primary;
+    }
+  }
+
+  .about-text {
+    flex: 2;
+
+    .about-heading {
+      font-size: 1.75rem;
+      margin-bottom: $spacing-md;
+      color: $dark;
+
+      body.dark & {
+        color: $white;
+      }
+    }
+
+    .about-description {
+      margin-bottom: $spacing-xl;
+      color: $gray;
+
+      body.dark & {
+        color: $gray-light;
+      }
+    }
+
+    .about-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-md;
+      margin-bottom: $spacing-xl;
+
+      .info-item {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+
+        .info-icon {
+          color: $primary;
+          font-size: 1.1rem;
+        }
+
+        .info-label {
+          font-weight: 600;
+          color: $dark;
+
+          body.dark & {
+            color: $white;
+          }
+        }
+
+        .info-value {
+          color: $gray;
+
+          body.dark & {
+            color: $gray-light;
+          }
+        }
+
+        a.info-value {
+          color: $primary;
+          text-decoration: none;
+          transition: $transition;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .about-buttons {
+      display: flex;
+      gap: $spacing-md;
+
+      .btn-icon {
+        margin-right: $spacing-sm;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    .about-content {
+      flex-direction: column;
+    }
+
+    .about-info {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    .about-buttons {
+      flex-direction: column;
+    }
+  }
+}

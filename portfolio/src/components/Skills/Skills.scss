@@ -1,0 +1,15 @@
+@import '../../assets/styles/variables';
+
+.skills {
+  background-color: $white;
+
+  body.dark & {
+    background-color: $darker;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-xl;
+  }
+}

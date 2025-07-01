@@ -1,0 +1,118 @@
+@import '../../assets/styles/variables';
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: $spacing-md 0;
+  background-color: $dark;
+  color: $white;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+
+  &.hide {
+    transform: translateY(-100%);
+  }
+
+  &.show {
+    transform: translateY(0);
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $primary;
+
+    span {
+      color: $white;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xl;
+
+    &.open {
+      transform: translateX(0);
+    }
+
+    .nav-link {
+      position: relative;
+      font-weight: 500;
+      transition: $transition;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -$spacing-xs;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $primary;
+        transition: $transition;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+
+    .theme-toggle {
+      font-size: 1.25rem;
+      color: $white;
+      transition: $transition;
+      padding: $spacing-xs;
+
+      &:hover {
+        color: $primary;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .mobile-menu-button {
+    display: none;
+    font-size: 1.5rem;
+    color: $white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 70%;
+      height: 100vh;
+      background-color: $dark;
+      flex-direction: column;
+      justify-content: center;
+      gap: $spacing-xl;
+      transform: translateX(100%);
+      transition: $transition-slow;
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-menu-button {
+      display: block;
+    }
+  }
+}
+
+body.dark {
+  .navbar {
+    background-color: $darker;
+    box-shadow: $shadow-md;
+  }
+}

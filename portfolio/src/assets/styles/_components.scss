@@ -1,0 +1,83 @@
+// Button styles
+.btn {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   padding: $spacing-sm $spacing-xl;
+   border-radius: $rounded-lg;
+   font-weight: 600;
+   transition: $transition;
+   white-space: nowrap;
+ 
+   &-primary {
+     background-color: $primary;
+     color: $white;
+ 
+     &:hover {
+       background-color: $primary-dark;
+       transform: translateY(-2px);
+       box-shadow: $shadow-md;
+     }
+   }
+ 
+   &-outline {
+     border: 2px solid $primary;
+     color: $primary;
+     background-color: transparent;
+ 
+     &:hover {
+       background-color: $primary;
+       color: $white;
+       transform: translateY(-2px);
+       box-shadow: $shadow-md;
+     }
+   }
+ 
+   &-icon {
+     margin-right: $spacing-sm;
+   }
+ }
+ 
+ // Card styles
+ .card {
+   background-color: $white;
+   border-radius: $rounded-xl;
+   overflow: hidden;
+   box-shadow: $shadow;
+   transition: $transition;
+ 
+   &:hover {
+     transform: translateY(-5px);
+     box-shadow: $shadow-lg;
+   }
+ 
+   body.dark & {
+     background-color: $dark;
+   }
+ }
+ 
+ // Badge styles
+ .badge {
+   display: inline-block;
+   padding: $spacing-xs $spacing-sm;
+   border-radius: $rounded-full;
+   font-size: 0.75rem;
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 0.05em;
+ 
+   &-primary {
+     background-color: $primary-light;
+     color: $primary-dark;
+   }
+ 
+   &-secondary {
+     background-color: #a7f3d0;
+     color: #059669;
+   }
+ 
+   &-accent {
+     background-color: #c7d2fe;
+     color: #4f46e5;
+   }
+ }

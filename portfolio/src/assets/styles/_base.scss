@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-sans;
+  line-height: 1.6;
+  color: $dark;
+  background-color: $light;
+  transition: $transition;
+}
+
+body.dark {
+  color: $light;
+  background-color: $darker;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-family: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.section {
+  padding: $spacing-3xl 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: $spacing-xl;
+  text-align: center;
+  position: relative;
+
+  span {
+    color: $primary;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -$spacing-sm;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: $primary;
+    border-radius: $rounded-full;
+  }
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: $gray;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto $spacing-3xl;
+}
+
+body.dark {
+  .section-subtitle {
+    color: $gray-light;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .section {
+    padding: $spacing-2xl 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,56 @@
+@import '../../assets/styles/variables';
+
+.projects {
+  background-color: $light;
+
+  body.dark & {
+    background-color: $dark;
+  }
+
+  .project-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-2xl;
+
+    .filter-btn {
+      padding: $spacing-sm $spacing-lg;
+      border-radius: $rounded-full;
+      font-weight: 500;
+      transition: $transition;
+      background-color: $gray-light;
+      color: $dark;
+
+      body.dark & {
+        background-color: $gray-dark;
+        color: $white;
+      }
+
+      &:hover {
+        background-color: $primary-light;
+        color: $primary-dark;
+      }
+
+      &.active {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: $spacing-xl;
+    margin-bottom: $spacing-2xl;
+  }
+
+  .more-projects {
+    text-align: center;
+
+    .btn-icon {
+      margin-right: $spacing-sm;
+    }
+  }
+}

@@ -1,0 +1,95 @@
+@import '../../assets/styles/variables';
+
+.skill-category {
+  background-color: $light;
+  padding: $spacing-xl;
+  border-radius: $rounded-xl;
+  box-shadow: $shadow-sm;
+  transition: $transition;
+
+  body.dark & {
+    background-color: $dark;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-md;
+  }
+
+  .skill-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacing-lg;
+
+    .skill-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: $rounded-full;
+      background-color: $primary-light;
+      color: $primary;
+      font-size: 1.5rem;
+      margin-right: $spacing-md;
+    }
+
+    .skill-title {
+      font-size: 1.25rem;
+      color: $dark;
+
+      body.dark & {
+        color: $white;
+      }
+    }
+  }
+
+  .skill-item {
+    margin-bottom: $spacing-md;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: $spacing-xs;
+
+      .skill-name {
+        font-weight: 500;
+        color: $dark;
+
+        body.dark & {
+          color: $white;
+        }
+      }
+
+      .skill-level {
+        color: $gray;
+
+        body.dark & {
+          color: $gray-light;
+        }
+      }
+    }
+
+    .skill-bar {
+      width: 100%;
+      height: 8px;
+      background-color: $gray-light;
+      border-radius: $rounded-full;
+      overflow: hidden;
+
+      body.dark & {
+        background-color: $gray-dark;
+      }
+
+      .skill-progress {
+        height: 100%;
+        background: linear-gradient(90deg, $primary, $primary-dark);
+        border-radius: $rounded-full;
+      }
+    }
+  }
+}
