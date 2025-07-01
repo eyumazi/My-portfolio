@@ -9,7 +9,7 @@ function App() {
     <ThemeProvider>
       <Router>
         <div className="App">
-          <Navbar /> {/* <-- Add Navbar here */}
+          <Navbar /> 
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
